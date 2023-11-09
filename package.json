@@ -1,0 +1,62 @@
+{
+  "name": "djanto",
+  "displayName": "djanto",
+  "icon": "images/logo.png",
+  "publisher": "mordor1110",
+  "keywords": [
+    "djanto",
+    "django models",
+    "django models suggestions",
+    "django",
+    "python",
+    "models",
+    "create",
+    "objects",
+    "suggestion",
+    "fields"
+  ],
+  "description": "Just a VSCode extension for suggesting parameters in Model.objects.create() method from Django",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "1.83.1"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "djanto",
+      "properties": {
+        "djanto.modelsFolder": {
+          "type": "string",
+          "description": "Django models folder path"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.83.1",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "@vscode/test-electron": "^2.3.6",
+    "eslint": "^8.52.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
+  }
+}
