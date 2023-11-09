@@ -4,7 +4,7 @@
   "icon": "images/logo.png",
   "publisher": "mordor1110",
   "repository": {
-    "url": "git@github.com:miguel-martinr/djanto.git"    
+    "url": "https://github.com/miguel-martinr/djanto"
   },
   "keywords": [
     "djanto",
