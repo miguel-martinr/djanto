@@ -5,11 +5,16 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 
-class DjantoSettings {
-  static modelsFolder = 'djanto.modelsFolder'
+
+enum DjantoSettings {
+  modelsFolder = 'djanto.modelsFolder'
 }
 
 let modelsFolder: string | undefined;
+
+function getSetting(key: DjantoSettings): string | undefined {
+  return vscode.workspace.getConfiguration().get(key);
+}
 
 
 function getRange(document: vscode.TextDocument, position: vscode.Position) {
@@ -72,7 +77,7 @@ function getAttributesForModel(modelName: string) {
 
 export function activate(context: ExtensionContext) {
 	
-  modelsFolder = vscode.workspace.getConfiguration().get('djanto.modelsFolder');
+  modelsFolder = getSetting(DjantoSettings.modelsFolder);
   console.log(modelsFolder);
 
 	vscode.languages.registerCompletionItemProvider(
