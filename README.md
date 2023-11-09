@@ -1,6 +1,6 @@
 # djanto
 
-Just a small extension for providing `Model.object.create` completion on Django models
+Just a small VS Code extension for providing `Model.object.create` completion on Django models
 
 
 ## Usage
