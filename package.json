@@ -3,6 +3,9 @@
   "displayName": "djanto",
   "icon": "images/logo.png",
   "publisher": "mordor1110",
+  "repository": {
+    "url": "git@github.com:miguel-martinr/djanto.git"    
+  },
   "keywords": [
     "djanto",
     "django models",
