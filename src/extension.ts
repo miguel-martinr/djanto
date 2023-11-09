@@ -4,6 +4,11 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
 
+
+class DjantoSettings {
+  static modelsFolder = 'djanto.modelsFolder'
+}
+
 let modelsFolder: string | undefined;
 
 
@@ -96,6 +101,14 @@ export function activate(context: ExtensionContext) {
 			}
 		},		
 	)
+
+  // Update settings
+  vscode.workspace.onDidChangeConfiguration(e => {
+    if (e.affectsConfiguration(DjantoSettings.modelsFolder)) {
+      modelsFolder = vscode.workspace.getConfiguration().get(DjantoSettings.modelsFolder)
+      console.log(modelsFolder);
+    }
+  })
 
 
 }
